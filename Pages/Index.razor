@@ -1,0 +1,20 @@
+﻿@page "/"
+@using Helpers
+
+<h1>Hello, @CustomGreet.customGreeting(name)!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<div>
+    <Button Color="Color.Success">Success</Button>
+</div>
+
+
+@code{
+
+    string name = "Rebeka";
+
+
+}

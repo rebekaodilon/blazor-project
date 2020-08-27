@@ -1,0 +1,47 @@
+@page "/todolist"
+
+<h1>To do's</h1>
+
+<Table>
+    <TableHeader ThemeContrast="ThemeContrast.Light">
+        <TableRow>
+            <TableHeaderCell>TODO</TableHeaderCell>
+            <TableHeaderCell>DONE</TableHeaderCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        @foreach (var item in listaTodo)
+        {
+            <TableRow>
+                <TableRowCell>@item.Title </TableRowCell>
+                @if (@item.Done != false)
+                {
+                    <TableRowCell>YES</TableRowCell>
+                }else{
+                    <TableRowCell>NO</TableRowCell>
+                }
+            </TableRow>
+        }
+    </TableBody>
+</Table>
+
+
+
+@code{
+
+    
+    List<Todo> listaTodo;
+    protected override void OnInitialized()
+    {
+
+        listaTodo = new List<Todo>(){
+
+        new Todo(){Title = "Passer com o cachorro", Done = false },
+        new Todo(){Title = "Estudar programação", Done = true}
+    };
+    
+
+    }
+
+
+}
